@@ -1,4 +1,4 @@
-package com.test.board.Handler.exception;
+package com.test.board.Handler.exception.copy;
 
 import org.springframework.http.HttpStatus;
 

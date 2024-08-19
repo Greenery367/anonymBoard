@@ -1,4 +1,4 @@
-package com.test.board.DTO;
+package com.test.board.dto;
 
 import com.test.board.Repository.Model.Board;
 
@@ -21,14 +21,10 @@ public class BoardDTO {
 	private String author;
 	private int status;
 	private int password;
-	
-	
+
 	public Board toBoard() {
-		Board board = Board.builder().title(this.title)
-									.content(this.content)
-									.author(this.author)
-									.password(this.password)
-									.build();
+		Board board = Board.builder().title(this.title).content(this.content).author(this.author)
+				.password(this.password).build();
 		return board;
 	}
 }
