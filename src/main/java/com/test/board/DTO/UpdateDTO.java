@@ -12,6 +12,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 
+// 게시글 수정 DTO
 public class UpdateDTO {
 	private String title;
 	private String content;

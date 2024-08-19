@@ -96,7 +96,7 @@ public class BoardController {
 	}
 	
 	/**
-	 * 작성자 인증 처리 후
+	 * 작성자 인증 처리 후 - 수정/삭제 페이지 이동 처리
 	 * @param boardId
 	 * @param type
 	 * @param password
@@ -125,7 +125,7 @@ public class BoardController {
 	}
 
 	/**
-	 * 
+	 * 게시글 수정 처리
 	 * @param boardId
 	 * @param dto
 	 * @return
@@ -136,11 +136,16 @@ public class BoardController {
 		return "redirect:/board/main";
 	}
 	
+	/**
+	 * 게시글 삭제 처리
+	 * @param boardId
+	 * @param dto
+	 * @return
+	 */
 	@GetMapping("/delete-board/{boardId}")
 	public String deleteBoardProc(@PathVariable(name="boardId")int boardId, UpdateDTO dto) {
 		int result=boardService.deleteBoard(boardId);
 		if(result==1) {
-			System.out.println("성공ㅋ");
 			return "redirect:/board/main";
 		}
 		return "redirect:/board/main";

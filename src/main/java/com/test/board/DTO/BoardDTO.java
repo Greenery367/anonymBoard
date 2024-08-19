@@ -13,6 +13,8 @@ import lombok.ToString;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
+// 게시글 작성 DTO
 public class BoardDTO {
 	private String title;
 	private String content;

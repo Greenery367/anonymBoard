@@ -18,6 +18,6 @@ public interface BoardRepository {
 							@Param("content")String content); // 글 수정 기능
 	public int deleteBoard(int boardId); // 글 삭제 기능
 	public List<Board> selectByKeyword(String keyword); // 글 조회 기능
-	public List<Board> selectAllBoardforPagination(@Param("limit")int limit, @Param("offset")int offset);
+	public List<Board> selectAllBoardforPagination(@Param("limit")int limit, @Param("offset")int offset); // 페이징 처리
 
 }
