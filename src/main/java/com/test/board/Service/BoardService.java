@@ -64,6 +64,12 @@ public class BoardService {
 		return board;
 	}
 	
+	/**
+	 * 게시글 수정 처리
+	 * @param boardId
+	 * @param dto
+	 * @return
+	 */
 	@Transactional
 	public int updateBoard(int boardId, UpdateDTO dto) {
 		int resultRow=boardRepository.updateBoard(boardId, dto.getTitle(),dto.getContent());
@@ -73,6 +79,12 @@ public class BoardService {
 		return resultRow;
 	}
 
+	/**
+	 * 게시글 삭제 처리
+	 * @param boardId
+	 * @return
+	 */
+	@Transactional
 	public int deleteBoard(int boardId) {
 		int resultRow=boardRepository.deleteBoard(boardId);
 		if(resultRow!=1) {

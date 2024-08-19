@@ -44,12 +44,12 @@ public class BoardController {
 	public String main(Model model, @PathVariable(name="currentPage", required=false)int currentPage) {
 		List<Board> boardList = boardService.selectAllBoard();
 		int totalPages=(int)Math.ceil((double)boardList.size()/5); // 총 페이지 수
-		int limit=5;
-		int offset;
+		int limit=5; // 한 페이지 당 게시글 수
+		int offset; // 오프셋
 		
 		offset=(currentPage-1)*limit;
 		
-		List<Board> listForPagination = boardService.selectAllBoardforPagination(limit, offset);
+		List<Board> listForPagination = boardService.selectAllBoardforPagination(limit, offset); // 페이징 처리
 		
 		model.addAttribute("currentPage", currentPage);
 		model.addAttribute("totalPages", totalPages);		
